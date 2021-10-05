@@ -9,8 +9,9 @@ Assuming you have an existing Appium setup using WebdriverIO:
 
 - Install the `flutter-appium-node` package: `npm i -D flutter-appium-node`
 - Use `require` function to use the package: `require('flutter-appium-node');`
-- Call `byText("Next")` in your tests (for
-  example):
+- Call any finder function in your tests (for example): `byText("Next")`
+
+index.js
 ```js
 const wdio = require('webdriverio');
 const { byText } = require('flutter-appium-node');
