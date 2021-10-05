@@ -1,6 +1,6 @@
 {
   "name": "flutter-appium-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This library helps to find the flutter elements present on the flutter app build, and later any action can be perfomed on that element using the webdriverIo driver.",
   "main": "index.js",
   "scripts": {
