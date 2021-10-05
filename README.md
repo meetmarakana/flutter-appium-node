@@ -1,7 +1,6 @@
 # flutter-appium-node
 
-[![NPM version]](https://npmjs.org/package/flutter-appium-node)
-[![Downloads]](https://npmjs.org/package/flutter-appium-node)
+[[NPM - Latest Version]](https://npmjs.org/package/flutter-appium-node)
 
 
 [flutter-appium-node](https://github.com/meetmarakana/flutter-appium-node) is a library that helps to find the flutter elements present on the flutter app build, and later any action can be perfomed on that element using the webdriverIo driver. This library helps user to create an automation framework using node, [Appium](https://appium.io) and [WebdriverIo](https://webdriver.io) for Flutter application.
