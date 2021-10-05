@@ -1,0 +1,38 @@
+{
+  "name": "flutter-appium-node",
+  "version": "1.0.0",
+  "description": "This library helps to find the flutter elements present on the flutter app build, and later any action can be perfomed on that element using the webdriverIo driver.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "_requiredBy": [
+    "#DEV:/",
+    "#USER"
+  ],
+  "engines": {
+    "node": ">=8.2.0"
+  },
+  "keywords": [
+    "npm",
+    "flutter driver",
+    "flutter element finder",
+    "flutter-finder",
+    "flutter appium node",
+    "flutter-appium",
+    "flutter-node-automation",
+    "flutter appium automation",
+    "appium-webdrivrio",
+    "appium"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meetmarakana/flutter-appium-node.git"
+  },
+  "author": "Meet R. Marakana",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/meetmarakana/flutter-appium-node/issues"
+  },
+  "homepage": "https://github.com/meetmarakana/flutter-appium-node#readme"
+}
