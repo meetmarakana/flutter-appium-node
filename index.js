@@ -1,6 +1,23 @@
 function serialize(obj) {
-    return Buffer.from(JSON.stringify(obj)).toString('base64');
+    return Buffer.from(JSON.stringify(obj)).toString('base64')
+                                            .replace(/=/g, "")
+                                            .replace(/\+/g, "-")
+                                            .replace(/\//g, "_");
 }
+
+function deserialize(input) {
+    var base64String = "";
+    if (typeof input === "string") {
+        base64String = input;
+    }
+    else if (typeof input === "object" && input.ELEMENT) {
+        base64String = input.ELEMENT;
+    }
+    else {
+        throw new Error("input is invalid " + JSON.stringify(input));
+    }
+    return JSON.parse(Buffer.from(base64String, "base64").toString());
+};
 
 exports.bySemanticsLabel = function (label) {
     return serialize({
@@ -46,6 +63,7 @@ exports.byText = function (text) {
 };
 
 exports.ancestor = function (args) {
+    // console.log(args);
     var of = args.of, matching = args.matching, _a = args.matchRoot, matchRoot = _a === void 0 ? false : _a, _b = args.firstMatchOnly, firstMatchOnly = _b === void 0 ? false : _b;
     var a = {
         finderType: "Ancestor",
@@ -53,13 +71,13 @@ exports.ancestor = function (args) {
         matchRoot: matchRoot,
     };
     var ofParam = {};
-    Object.entries(deserializer_1.deserialize(of)).forEach(function (_a) {
+    Object.entries(deserialize(of)).forEach(function (_a) {
         var key = _a[0], value = _a[1];
         return (ofParam[key] = value);
     });
     a["of"] = JSON.stringify(ofParam);
     var matchingPara = {};
-    Object.entries(deserializer_1.deserialize(matching)).forEach(function (_a) {
+    Object.entries(deserialize(matching)).forEach(function (_a) {
         var key = _a[0], value = _a[1];
         return (matchingPara[key] = value);
     });
@@ -75,13 +93,13 @@ exports.descendant = function (args) {
         matchRoot: matchRoot,
     };
     var ofParam = {};
-    Object.entries(deserializer_1.deserialize(of)).forEach(function (_a) {
+    Object.entries(deserialize(of)).forEach(function (_a) {
         var key = _a[0], value = _a[1];
         return (ofParam[key] = value);
     });
     a["of"] = JSON.stringify(ofParam);
     var matchingParam = {};
-    Object.entries(deserializer_1.deserialize(matching)).forEach(function (_a) {
+    Object.entries(deserialize(matching)).forEach(function (_a) {
         var key = _a[0], value = _a[1];
         return (matchingParam[key] = value);
     });

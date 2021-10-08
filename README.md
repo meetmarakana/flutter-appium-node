@@ -7,7 +7,7 @@
 
 
 
-## Quick start
+## Quick start [in-depth Documentation will be published soon]
 
 Assuming you have an existing Appium setup using WebdriverIO:
 
